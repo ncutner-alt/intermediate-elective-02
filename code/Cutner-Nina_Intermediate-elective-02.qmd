@@ -1,0 +1,45 @@
+---
+title: "Cutner-Nina_Intermediate-elective-02"
+author: "Nina Cutner"
+format: pdf
+date: May 12, 2026
+execute: 
+  messages: false
+  warning: false
+---
+
+# Set up
+
+## Packages
+
+```{r}
+#| label: Packages
+
+# data visualization
+library(tidyverse)
+
+# cleaning column names
+library(janitor)
+
+# working with file paths
+library(here)
+
+# working with dates
+library(lubridate)
+
+# improved text rendering in ggplot
+library(ggtext)
+
+# direct labeling for plots
+library(ggrepel)
+```
+
+## Data
+
+```{r}
+#| label: Data
+
+# read in vegetation data
+veg <- read_csv(here("data", "veg copy.csv"))
+```
+
