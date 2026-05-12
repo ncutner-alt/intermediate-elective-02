@@ -42,4 +42,11 @@ library(ggrepel)
 # read in vegetation data
 veg <- read_csv(here("data", "veg copy.csv"))
 ```
+# 1. Explaining inspiration
+
+The visualization I chose for my inspiration is Steven Ponce's, "Coal falls. Renewables rise."
+
+This visualization style works well for the NCOS vegetation dataset because the project focuses on ecological change through time, specifically shifts in native vegetation cover between 2017 and 2025. Similar to how Ponce's figure highlights transitions in energy systems, this visualization highlights changes in vegetation communities at NCOS.
+
+The visualization will display year on the x-axis and percent cover on the y-axis. Separate lines will represent the dominant native plant species observed at NCOS between 2017 and 2025. Color will be used to distinguish species, and direct labels at the ends of lines will identify each species rather than using a legend. This design follows the style of the original visualization by emphasizing long-term ecological change through smooth, flowing trends over time.
 
