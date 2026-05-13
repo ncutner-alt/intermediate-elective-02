@@ -119,6 +119,32 @@ native_veg_plot <- ggplot(
     hjust = 0,
     segment.color = NA,
     size = 3.5
+  ) +
+  scale_x_continuous(
+    breaks = seq(2021, 2025, by = 1),
+    limits = c(2021, 2026)
+  ) +
+  scale_y_continuous(
+    limits = c(0, 65),
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(
+    title = "Native vegetation changes through time at NCOS",
+    subtitle = "Mean percent cover of five dominant native plant species",
+    x = NULL,
+    y = "Mean percent cover"
+  ) +
+  theme_minimal() +
+  theme(
+    legend.position = "none",
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(face = "bold", size = 16),
+    plot.subtitle = element_text(size = 11),
+    axis.title.y = element_text(size = 10),
+    axis.text = element_text(size = 9)
   )
+
+# display plot
+native_veg_plot
 ```
 
