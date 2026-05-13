@@ -89,6 +89,25 @@ veg_summary <- veg_native |>
   summarize(
     mean_cover = mean(percent_cover, na.rm = TRUE),
     .groups = "drop"
+  ) |> 
+  mutate(
+    species_label = str_replace_all(psoc, "_"," ")
   )
+# create data frame for direct labels at the final year
+veg_labels <- veg_summary |> 
+  group_by(species_label) |> 
+  filter(year == max(year)) |> 
+  ungroup()
+
+# create Ponce-inspired native vegetation trend figure
+native_veg_plot <- ggplot(
+  data = veg_summary,
+  mapping = aes(
+    x = year,
+    y = mean_cover,
+    color = species_label,
+    group = species_label
+  )
+)
 ```
 
