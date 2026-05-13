@@ -78,4 +78,17 @@ veg_native <- veg_clean |>
 
 ```
 
+```{r}
+#| label: native-vegetation-figure
+#| fig-width: 8
+#| fig-height: 5
+
+# summarize selected native species by year
+veg_summary <- veg_native |> 
+  group_by(year, psoc) |> 
+  summarize(
+    mean_cover = mean(percent_cover, na.rm = TRUE),
+    .groups = "drop"
+  )
+```
 
