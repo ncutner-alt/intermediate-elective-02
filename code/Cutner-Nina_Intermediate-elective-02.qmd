@@ -108,6 +108,17 @@ native_veg_plot <- ggplot(
     color = species_label,
     group = species_label
   )
-)
+) +
+  geom_line(linewidth = 1.5) +
+  geom_point(size = 2.5) +
+  geom_text_repel(
+    data = veg_labels,
+    mapping = aes(label = species_label),
+    nudge_x = 0.4,
+    direction = "y",
+    hjust = 0,
+    segment.color = NA,
+    size = 3.5
+  )
 ```
 
