@@ -53,4 +53,29 @@ The visualization will display year on the x-axis and percent cover on the y-axi
 # 2. Planning the figure
 
 ![Initial sketch of final visualization](../figures/sketch.jpg)
+# 3. Coding the figure
+
+```{r}
+#| label: clean-data
+
+# vector of selected native species
+native_species <- c(
+  "Salicornia_pacifica",
+  "Distichlis_spicata",
+  "Eleocharis_palustris",
+  "Stipa_pulchra",
+  "Frankenia_salina"
+)
+
+# create cleaned vegetation object
+veg_clean <- veg |>
+  # clean column names
+  clean_names()
+
+# filter to selected native species
+veg_native <- veg_clean |>
+  filter(psoc %in% native_species)
+
+```
+
 
