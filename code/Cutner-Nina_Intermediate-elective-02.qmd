@@ -245,4 +245,22 @@ native_veg_plot <- ggplot(
 # display plot
 native_veg_plot
 ```
+```{r}
+#| label: save-figure
+
+# save final figure to figures folder
+ggsave(
+  filename = here("figures", "native-vegetation-trends.png"),
+  
+  # figure to save
+  plot = native_veg_plot,
+  
+  # output size
+  width = 10,
+  height = 6,
+  
+  # image resolution
+  dpi = 300
+)
+```
 
