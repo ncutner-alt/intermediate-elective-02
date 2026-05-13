@@ -6,7 +6,7 @@ This repository contains data, code, and visualizations for the Intermediate Ele
 
 To work with the code in this repository, you will need the following packages:
 
-```r
+```
 library(tidyverse)
 library(janitor)
 library(here)
@@ -17,7 +17,7 @@ library(ggrepel)
 
 ## Data and file information
 
-```text
+```
 .
 ├── README.md
 ├── code
