@@ -50,3 +50,7 @@ This visualization style works well for the NCOS vegetation dataset because the 
 
 The visualization will display year on the x-axis and percent cover on the y-axis. Separate lines will represent the dominant native plant species observed at NCOS between 2017 and 2025. Color will be used to distinguish species, and direct labels at the ends of lines will identify each species rather than using a legend. This design follows the style of the original visualization by emphasizing long-term ecological change through smooth, flowing trends over time.
 
+# 2. Planning the figure
+
+![Initial sketch of final visualization](../figures/sketch.jpg)
+
