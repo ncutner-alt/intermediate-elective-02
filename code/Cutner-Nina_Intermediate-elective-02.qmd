@@ -62,7 +62,7 @@ The visualization will display year on the x-axis and percent cover on the y-axi
 native_species <- c(
   "Salicornia_pacifica",
   "Distichlis_spicata",
-  "Eleocharis_palustris",
+  "Jaumea_carnosa",
   "Stipa_pulchra",
   "Frankenia_salina"
 )
