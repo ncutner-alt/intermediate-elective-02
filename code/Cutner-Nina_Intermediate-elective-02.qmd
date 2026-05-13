@@ -102,32 +102,72 @@ veg_labels <- veg_summary |>
 # create Ponce-inspired native vegetation trend figure
 native_veg_plot <- ggplot(
   data = veg_summary,
+  
+  # map variables to plot aesthetics
   mapping = aes(
+    
+    # map year to x-axis
     x = year,
+    
+    # map mean percent cover to y-axis
     y = mean_cover,
+    
+    # color lines by species
     color = species_label,
+    
+    # group observations by species
     group = species_label
   )
 ) +
+  
+  # add trend lines for each species
   geom_line(linewidth = 1.5) +
+  
+  # add points for yearly observations
   geom_point(size = 2.5) +
+  
+  # directly label species at end of lines
   geom_text_repel(
     data = veg_labels,
     mapping = aes(label = species_label),
+    
+    # shift labels slightly right of final year
     nudge_x = 0.4,
+    
+    # keep labels vertically organized
     direction = "y",
+    
+    # align labels to left side
     hjust = 0,
+    
+    # remove connecting segments
     segment.color = NA,
+    
+    # label text size
     size = 3.5
   ) +
+  
+  # customize x-axis scale and limits
   scale_x_continuous(
+    
+    # display yearly breaks
     breaks = seq(2021, 2025, by = 1),
+    
+    # extend axis slightly for labels
     limits = c(2021, 2026)
   ) +
+  
+  # customize y-axis scale and spacing
   scale_y_continuous(
+    
+    # set y-axis limits
     limits = c(0, 65),
+    
+    # add slight space above lines
     expand = expansion(mult = c(0, 0.05))
   ) +
+  
+  # manually assign colors to species
   scale_color_manual(
     values = c(
       "Salicornia pacifica" = "#29B6F6",
@@ -137,38 +177,68 @@ native_veg_plot <- ggplot(
       "Frankenia salina" = "#2ECC71"
     )
   ) +
+  
+  # add plot title and axis labels
   labs(
     title = "Native vegetation changes through time at NCOS",
     subtitle = "Mean percent cover of five dominant native plant species",
     x = NULL,
     y = "Mean percent cover"
   ) +
+  
+  # apply minimal base theme
   theme_minimal() +
+  
+  # customize dark Ponce-inspired appearance
   theme(
+    
+    # remove legend
     legend.position = "none",
+    
+    # set dark panel background
     panel.background = element_rect(fill = "#111111", color = NA),
+    
+    # set dark plot background
     plot.background = element_rect(fill = "#111111", color = NA),
+    
+    # remove minor grid lines
     panel.grid.minor = element_blank(),
+    
+    # customize major grid lines
     panel.grid.major = element_line(color = "#2B2B2B"),
+    
+    # customize title appearance
     plot.title = element_text(
       face = "bold",
       size = 20,
       color = "white"
     ),
+    
+    # customize subtitle appearance
     plot.subtitle = element_text(
       size = 11,
       color = "gray80"
     ),
+    
+    # customize y-axis title
     axis.title.y = element_text(
       size = 11,
       color = "white"
     ),
+    
+    # customize axis text
     axis.text = element_text(
       size = 10,
       color = "white"
     ),
+    
+    # remove x-axis title
     axis.title.x = element_blank(),
+    
+    # remove axis lines
     axis.line = element_blank(),
+    
+    # set all plot text to white
     text = element_text(color = "white")
   )
 
