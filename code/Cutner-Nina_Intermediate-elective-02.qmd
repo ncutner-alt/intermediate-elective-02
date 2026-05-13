@@ -128,6 +128,15 @@ native_veg_plot <- ggplot(
     limits = c(0, 65),
     expand = expansion(mult = c(0, 0.05))
   ) +
+  scale_color_manual(
+    values = c(
+      "Salicornia pacifica" = "#29B6F6",
+      "Distichlis spicata" = "#FF6F61",
+      "Jaumea carnosa" = "#F4B400",
+      "Stipa pulchra" = "#D16BE0",
+      "Frankenia salina" = "#2ECC71"
+    )
+  ) +
   labs(
     title = "Native vegetation changes through time at NCOS",
     subtitle = "Mean percent cover of five dominant native plant species",
@@ -137,11 +146,30 @@ native_veg_plot <- ggplot(
   theme_minimal() +
   theme(
     legend.position = "none",
+    panel.background = element_rect(fill = "#111111", color = NA),
+    plot.background = element_rect(fill = "#111111", color = NA),
     panel.grid.minor = element_blank(),
-    plot.title = element_text(face = "bold", size = 16),
-    plot.subtitle = element_text(size = 11),
-    axis.title.y = element_text(size = 10),
-    axis.text = element_text(size = 9)
+    panel.grid.major = element_line(color = "#2B2B2B"),
+    plot.title = element_text(
+      face = "bold",
+      size = 20,
+      color = "white"
+    ),
+    plot.subtitle = element_text(
+      size = 11,
+      color = "gray80"
+    ),
+    axis.title.y = element_text(
+      size = 11,
+      color = "white"
+    ),
+    axis.text = element_text(
+      size = 10,
+      color = "white"
+    ),
+    axis.title.x = element_blank(),
+    axis.line = element_blank(),
+    text = element_text(color = "white")
   )
 
 # display plot
