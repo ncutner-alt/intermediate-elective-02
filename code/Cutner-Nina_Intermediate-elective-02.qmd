@@ -264,3 +264,10 @@ ggsave(
 )
 ```
 
+# 4. Describing my process
+
+As I am more accustomed to modeling visualizations after class material, it was interesting to adapt someone else’s code and design style for this assignment. I referenced and modified components of Steven Ponce’s code throughout the process, and I also used generative AI to better understand how certain aesthetic and annotation elements were constructed before adapting them to my own data set.
+
+The biggest challenges I encountered while creating my visualization were related to aesthetics and layout. I wanted my figure to closely resemble Ponce’s dark editorial style, which required experimenting with custom colors, plot spacing, direct labels, and annotations that I had not previously used in class assignments.
+
+My visualization differs from visualizations created in class mainly because of its style and design. Rather than focusing only on displaying data, this figure emphasizes direct labeling, custom styling, and the use of multiple lines to communicate long-term trends across native species.
